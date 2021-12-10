@@ -28,8 +28,10 @@ def hello_world(request):
 
         # Serialize
         serializer = NewModelSerializer(new_model)
-
         return Response(serializer.data)
 
     # GET
-    return Response({'message': 'Return Text'})
+    new_model_list = NewModel.objects.all()
+    serializer = NewModelSerializer(new_model_list, many=True)
+
+    return Response(serializer.data)
