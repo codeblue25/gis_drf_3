@@ -1,6 +1,6 @@
 from django.urls import path
 
-from accountapp.views import hello_world, hello_world_template, AccountCreateTemplate
+from accountapp.views import hello_world, hello_world_template, AccountCreateTemplate, AccountCreateAPIView
 
 app_name = 'accountapp'
 
@@ -11,5 +11,7 @@ urlpatterns = [
     path('hello_world/', hello_world, name='hello_world'),
 
     # 계정 생성하는 views 라우팅
-    path('create/', AccountCreateTemplate, name='create_template'),
+    path('create_template/', AccountCreateTemplate, name='create_template'),
+    
+    path('crate/', AccountCreateAPIView.as_view(), name='create'),
 ]
