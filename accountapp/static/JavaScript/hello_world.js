@@ -7,7 +7,8 @@ function send_input() {
         // handle success
         console.log(response);
         // POST 요청이 성공했을 때 하는 JS 작업: Hello JS!
-        document.getElementById('text').innerHTML = response.data['message'];
+        document.getElementById('text').innerHTML = response.data['text'];
+        document.getElementById('new_model_created_at').innerHTML = response.data['created_at'];
 
       })
       .catch(function (error) {
