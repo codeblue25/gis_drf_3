@@ -34,13 +34,11 @@ function send_input() {
         // handle success
         console.log(response);
 
-        document.getElementById('alert_box').innerHTML
-                 += "<div class='btn btn-primary rounded-pill px-5 mb-3'> 로그인을 성공했습니다. </div>";
-
         // Get token and generate cookies
         setCookie('drf_token', 'Token ' + response.data['token']);
 
-//        window.location.href = '/accounts/hello_world_template/';
+        // redirect success_url
+        window.location.href = '/accounts/hello_world_template/';
 
       })
       .catch(function (error) {
