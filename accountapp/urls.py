@@ -2,7 +2,8 @@ from django.urls import path
 from django.views.generic import TemplateView
 from rest_framework.authtoken import views
 
-from accountapp.views import hello_world, hello_world_template, AccountCreateTemplate, AccountCreateAPIView, AccountLoginView
+from accountapp.views import hello_world, hello_world_template, AccountCreateTemplate, AccountCreateAPIView, \
+    AccountLoginView, AccountRetrieveAPIView
 
 app_name = 'accountapp'
 
@@ -20,4 +21,6 @@ urlpatterns = [
     # 계정 생성하는 views 라우팅
     path('create_template/', AccountCreateTemplate, name='create_template'),
     path('create/', AccountCreateAPIView.as_view(), name='create'),
+
+    path('retrieve/<int:pk>', AccountRetrieveAPIView.as_view(), name='retrieve'),
 ]
