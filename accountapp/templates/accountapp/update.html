@@ -11,12 +11,10 @@
     </div>
 
     <div>
-        <form>
-            <input id="username" type="text" placeholder="ID" />
-            <input id="email" type="email" placeholder="email" />
-            <input type="submit" onclick="update_account('{{ view.kwargs.pk }}');"
-               class="btn btn-dark rounded-pill px-5" />
-        </form>
+        <input id="username" type="text" placeholder="ID" />
+        <input id="email" type="email" placeholder="email" />
+        <input type="submit" onclick="update_account('{{ view.kwargs.pk }}');"
+           class="btn btn-dark rounded-pill px-5" />
     </div>
 </div>
 
