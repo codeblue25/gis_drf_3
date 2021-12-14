@@ -14,6 +14,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from accountapp.models import NewModel
+from accountapp.permissions import IsOwner
 from accountapp.serializers import NewModelSerializer, UserSerializer, UserWithoutPasswordSerializer
 
 
@@ -76,7 +77,7 @@ class AccountUpdateTemplateView(TemplateView):
 class AccountUpdateAPIView(UpdateAPIView):
     queryset = User.objects.all()
     serializer_class = UserWithoutPasswordSerializer
-    permission_classes = []
+    permission_classes = [IsOwner]
     authentication_classes = [TokenAuthentication]
 
 
@@ -86,5 +87,5 @@ class AccountDestroyTemplateView(TemplateView):
 
 class AccountDestroyAPIView(DestroyAPIView):
     queryset = User.objects.all()
-    permission_classes = []
+    permission_classes = [IsOwner]
     authentication_classes = [TokenAuthentication]
