@@ -4,7 +4,7 @@ from rest_framework.authtoken import views
 
 from accountapp.views import hello_world, hello_world_template, AccountCreateTemplate, AccountCreateAPIView, \
     AccountLoginView, AccountRetrieveAPIView, AccountRetrieveTemplateView, AccountUpdateAPIView, \
-    AccountUpdateTemplateView, AccountDestroyAPIView
+    AccountUpdateTemplateView, AccountDestroyAPIView, AccountDestroyTemplateView
 
 app_name = 'accountapp'
 
@@ -33,5 +33,6 @@ urlpatterns = [
 
     # 유저 정보 삭제하는 views 라우팅
 
+    path('delete_template/<int:pk>', AccountDestroyTemplateView.as_view(), name='delete_template'),
     path('delete/<int:pk>', AccountDestroyAPIView.as_view(), name='delete'),
 ]
