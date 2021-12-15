@@ -3,16 +3,21 @@
 
 {% block content %}
 
-<div>
-    <div id="alert_box"></div>
-
+<div class="my-5" style="max-width: 600px; margin: auto;">
     <div class="my-5">
         <h2>Update Account</h2>
     </div>
+    <div id="alert_box"></div>
 
     <div>
-        <input id="username" type="text" placeholder="ID" />
-        <input id="email" type="email" placeholder="email" />
+        <div class="mb-3">
+            <label for="username" class="form-label">username</label>
+            <input id="username" type="text" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">email</label>
+            <input id="email" type="email" class="form-control" />
+        </div>
         <input type="submit" onclick="update_account('{{ view.kwargs.pk }}');"
            class="btn btn-dark rounded-pill px-5" />
     </div>
