@@ -19,9 +19,7 @@ function send_input() {
         console.log(response);
 
         // redirect success_url
-        // window.location.href = '';
-        document.getElementById('alert_box').innerHTML
-                 += "<div class='btn btn-primary rounded-pill px-5 mb-3'> 프로필 생성을 성공했습니다</div>"
+        window.location.href = '/accounts/retrieve_template/' + response.data['owner']['id'];
       })
       .catch(function (error) {
       // handle failure
