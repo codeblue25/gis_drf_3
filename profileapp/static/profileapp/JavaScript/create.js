@@ -19,7 +19,7 @@ function send_input() {
         console.log(response);
 
         // redirect success_url
-        window.location.href = '/accounts/retrieve_template/' + response.data['owner']['id'];
+        window.location.href = '/accounts/retrieve_template/' + response.data['owner_id'];
       })
       .catch(function (error) {
       // handle failure

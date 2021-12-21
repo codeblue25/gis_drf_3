@@ -38,7 +38,7 @@ function update_account(pk) {
         // handle success
         console.log(response);
 
-        window.location.href = '/accounts/retrieve_template/' + response.data['owner']['id'];
+        window.location.href = '/accounts/retrieve_template/' + response.data['owner_id'];
       })
       .catch(function (error) {
         // handle error
